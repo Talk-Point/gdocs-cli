@@ -13,14 +13,16 @@ A command-line interface for Google Docs, inspired by [gmail-cli](https://github
 
 ## Installation
 
-```bash
-# Using uv (recommended)
-uv pip install gdocs-cli
+Requires Python 3.11+ and [uv](https://github.com/astral-sh/uv) package manager.
 
-# Or install from source
-git clone https://github.com/Talk-Point/gdocs-cli.git
-cd gdocs-cli
-uv sync
+```bash
+uv tool install git+https://github.com/Talk-Point/gdocs-cli.git
+```
+
+For updates:
+
+```bash
+uv tool upgrade gdocs-cli
 ```
 
 ## Setup
