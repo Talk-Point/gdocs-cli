@@ -44,6 +44,7 @@ class TestAuthCli:
     def test_auth_status_not_authenticated(self, mocker):
         """Test auth status when not authenticated."""
         mocker.patch("gdocs_cli.cli.auth.list_accounts", return_value=[])
+        mocker.patch("gdocs_cli.cli.auth.get_default_account", return_value=None)
 
         result = runner.invoke(app, ["auth", "status"])
 

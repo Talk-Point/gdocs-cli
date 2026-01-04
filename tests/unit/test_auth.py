@@ -102,6 +102,7 @@ class TestResolveAccount:
     def test_resolve_no_accounts(self, mocker):
         """Test resolving when no accounts configured."""
         mocker.patch("gdocs_cli.services.auth.list_accounts", return_value=[])
+        mocker.patch("gdocs_cli.services.auth.get_default_account", return_value=None)
         os.environ.pop("GDOCS_ACCOUNT", None)
 
         with pytest.raises(NoAccountConfiguredError):
